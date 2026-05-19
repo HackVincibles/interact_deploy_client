@@ -21,9 +21,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -39,6 +37,7 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+  turbopack: {},
 };
 
 export default nextConfig;
