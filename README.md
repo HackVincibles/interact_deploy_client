@@ -252,13 +252,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ⭐ Show Your Support
 
 If you found this project helpful, please give it a ⭐ on GitHub!
-
-```
-
----
-
-**📝 Instructions:**
-1. Copy everything above (from ```markdown to ```)
-2. Replace `yourusername`, `your.email@example.com`, `yourhandle`, and `interact-ai.com` with your actual details
-3. Save as `README.md` in your project root
-4. That's it! Ready to paste anywhere 🚀
