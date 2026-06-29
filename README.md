@@ -1,3 +1,4 @@
+
 # 🎤💼 Interact.ai: AI-Powered Job Interview Preparation Platform 📊
 
 A job interview preparation platform powered by Vapi AI Voice agents. This project allows users to practice interview scenarios with AI-driven voice assistants and receive instant feedback based on their conversations.
@@ -10,177 +11,254 @@ Experience the application live: [Interact.ai Interview Platform](https://interv
 
 Built with Next.js for the user interface and backend logic, Firebase for authentication and data storage, styled with TailwindCSS and using Vapi's voice agents, Interact.ai helps users prepare for job interviews through AI-assisted mock interviews. The platform offers immediate feedback and provides a seamless experience for interview practice.
 
-## ⚙️ Tech Stack
+## 📱 Mobile App & Cross-Platform Strategy
 
-- **Next.js** - React framework for the frontend and API routes
-- **Firebase** - Authentication and database
-- **Tailwind CSS** - For styling
-- **Vapi AI** - For voice agent integration
-- **shadcn/ui** - UI component library
-- **Google Gemini** - AI model for generating questions and feedback
-- **Zod** - For form validation
+We are developing a **React Native mobile application** to bring Interact.ai to iOS and Android devices. The mobile app will offer the same core features as the web platform, optimized for on-the-go interview practice.
 
-## 🔋 Features
+### Cross-Platform Approach
+- **Framework**: React Native for a single codebase across iOS and Android
+- **State Management**: Redux Toolkit for consistent state across platforms
+- **Backend**: Shared Firebase backend for seamless data sync
+- **Voice Integration**: Vapi AI SDK for mobile voice capabilities
+- **Development**: Expo for faster prototyping and OTA updates
 
-👉 **Authentication**: Sign Up and Sign In using password/email authentication handled by Firebase.
+This cross-platform strategy ensures users can:
+- Start practice sessions on desktop and continue on mobile
+- Access interview history and feedback across all devices
+- Practice anytime, anywhere with a consistent user experience
 
-👉 **Create Interviews**: Easily generate job interviews with help of Vapi voice assistants and Google Gemini.
+## ✨ Features
 
-👉 **Get feedback from AI**: Take the interview with AI voice agent, and receive instant feedback based on your conversation.
+- 🎙️ **AI Voice Interviews** - Practice with realistic Vapi AI voice agents
+- 📊 **Instant Feedback** - Receive detailed analysis on your responses
+- 🔐 **Authentication** - Secure login with Firebase (Email/Google)
+- 📈 **Progress Tracking** - Monitor your improvement over time
+- 🎯 **Role-Specific Interviews** - Practice for specific job roles
+- 📱 **Cross-Platform** - Available on Web, iOS, and Android
+- 💾 **History Storage** - Access all your past interviews
+- 🎨 **Modern UI** - Clean, responsive design with TailwindCSS
 
-👉 **Modern UI/UX**: A sleek and user-friendly interface designed for a great experience.
+## 🛠️ Tech Stack
 
-👉 **Interview Page**: Conduct AI-driven interviews with real-time feedback and detailed transcripts.
+### Web Platform
+- **Frontend**: Next.js 14, React, TailwindCSS
+- **Backend**: Next.js API Routes
+- **Database**: Firebase Firestore
+- **Authentication**: Firebase Auth
+- **AI Voice**: Vapi AI
+- **Hosting**: Vercel
 
-👉 **Dashboard**: Manage and track all your interviews with easy navigation.
-
-👉 **Responsiveness**: Fully responsive design that works seamlessly across devices.
+### Mobile Platform (In Development)
+- **Framework**: React Native with Expo
+- **State Management**: Redux Toolkit
+- **Navigation**: React Navigation
+- **Backend**: Firebase (shared with web)
+- **Voice**: Vapi AI SDK
+- **Hosting**: Expo Application Services
 
 ## 📂 Project Structure
 
 ```
-.
-├── README.md
-├── app
-│   ├── (auth)
-│   │   ├── layout.tsx
-│   │   ├── sign-in
-│   │   │   └── page.tsx
-│   │   └── sign-up
-│   │       └── page.tsx
-│   ├── (root)
-│   │   ├── interview
-│   │   │   ├── [id]
-│   │   │   │   ├── feedback
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── page.tsx
-│   │   │   └── page.tsx
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── api
-│   │   └── vapi
-│   │       └── generate
-│   │           └── route.ts
-│   ├── favicon.ico
-│   ├── globals.css
-│   └── layout.tsx
-├── components
-│   ├── Agent.tsx
-│   ├── AuthForm.tsx
-│   ├── DisplayTechIcons.tsx
-│   ├── FormField.tsx
-│   ├── InterviewCard.tsx
-│   └── ui
-│       ├── button.tsx
-│       ├── form.tsx
-│       ├── input.tsx
-│       ├── label.tsx
-│       └── sonner.tsx
-├── firebase
-│   ├── admin.ts
-│   └── client.ts
-├── lib
-│   ├── actions
-│   │   ├── auth.action.ts
-│   │   └── general.action.ts
-│   ├── utils.ts
-│   └── vapi.sdk.ts
-├── public
-│   ├── ai-avatar.png
-│   ├── calendar.svg
-│   ├── covers
-│   │   └── [company images]
-│   └── [other assets]
-└── types
-    ├── index.d.ts
-    └── vapi.d.ts
+
+interact-ai/
+├── components/          # Reusable React components
+│   ├── ui/             # UI components
+│   ├── interview/      # Interview-specific components
+│   └── dashboard/      # Dashboard components
+├── pages/
+│   ├── api/            # Next.js API routes
+│   │   ├── auth/       # Authentication endpoints
+│   │   └── interview/  # Interview endpoints
+│   ├── dashboard/      # User dashboard
+│   ├── interview/      # Interview simulation
+│   └── auth/           # Authentication pages
+├── firebase/           # Firebase configuration
+│   ├── config.js       # Firebase setup
+│   ├── auth.js         # Auth methods
+│   └── firestore.js    # Database operations
+├── hooks/              # Custom React hooks
+│   ├── useAuth.js      # Authentication hook
+│   └── useInterview.js # Interview logic hook
+├── utils/              # Utility functions
+├── styles/             # Global styles
+├── public/             # Static assets
+└── mobile/             # React Native mobile app (coming soon)
+├── src/
+├── App.js
+└── app.json
+
 ```
 
-## 🤸 Quick Start
-
-Follow these steps to set up the project locally on your machine.
+## 🚀 Getting Started
 
 ### Prerequisites
-
-Make sure you have the following installed on your machine:
-
-- Git
-- Node.js
-- npm (Node Package Manager)
-
-### Cloning the Repository
-
-```bash
-git clone https://github.com/LankeSathwik7/Interview-Platform.git
-cd Interview-Platform
-```
+- Node.js (v18 or higher)
+- npm or yarn
+- Firebase account
+- Vapi AI account
 
 ### Installation
 
-Install the project dependencies using npm:
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/interact-ai.git
+cd interact-ai
+```
+
+2. Install dependencies
 
 ```bash
 npm install
+# or
+yarn install
 ```
 
-### Set Up Environment Variables
+3. Set up environment variables
+   Create a .env.local file in the root directory:
 
-Create a new file named `.env.local` in the root of your project and add the following content:
-
-```
-NEXT_PUBLIC_VAPI_WEB_TOKEN=
-NEXT_PUBLIC_VAPI_WORKFLOW_ID=
-
-GOOGLE_GENERATIVE_AI_API_KEY=
-
-NEXT_PUBLIC_BASE_URL=
-
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-NEXT_PUBLIC_FIREBASE_APP_ID=
-
-FIREBASE_PROJECT_ID=
-FIREBASE_CLIENT_EMAIL=
-FIREBASE_PRIVATE_KEY=
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_VAPI_API_KEY=your_vapi_api_key
 ```
 
-Replace the placeholder values with your actual Firebase and Vapi credentials.
-
-### Running the Project
+4. Run the development server
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+5. Open your browser
+   Visit http://localhost:3000
 
-## 🧠 How It Works
+📱 Mobile App Setup (Coming Soon)
 
-1. **User Authentication**: Sign up or sign in to access the platform.
-2. **Create Interview**: Select a job role and customize your interview settings.
-3. **Take Interview**: Interact with the AI voice agent that asks you relevant interview questions.
-4. **Get Feedback**: After completing the interview, receive detailed feedback on your performance.
-5. **Review & Improve**: Review your answers and the AI's feedback to improve for future interviews.
+The React Native mobile app is currently in development. To run the mobile app locally:
 
-## 🔗 Resources
+```bash
+cd mobile
+npm install
+npx expo start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Firebase Documentation](https://firebase.google.com/docs)
-- [Vapi AI Documentation](https://vapi.ai/docs)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com/)
+Scan the QR code with Expo Go app on your device.
 
-## 🙏 Acknowledgements
+🔧 Key API Endpoints
 
-This project was built following the JavaScript Mastery YouTube tutorial and repository. Special thanks to:
+Endpoint Method Description
+/api/auth/register POST User registration
+/api/auth/login POST User login
+/api/interview/start POST Start a new interview
+/api/interview/feedback POST Get interview feedback
+/api/interview/history GET Get user's interview history
+/api/interview/save POST Save interview results
 
-- [JavaScript Mastery](https://www.youtube.com/@javascriptmastery) for the excellent tutorial and inspiration.
-- [Adrian Hajdin](https://github.com/adrianhajdin) for the original code and guidance.
+📊 Database Schema
 
-## 📝 License
+Users Collection
+
+```javascript
+{
+  uid: string,
+  email: string,
+  displayName: string,
+  photoURL: string,
+  createdAt: timestamp,
+  preferences: {
+    experienceLevel: string,
+    targetRole: string
+  }
+}
+```
+
+Interviews Collection
+
+```javascript
+{
+  id: string,
+  userId: string,
+  role: string,
+  experienceLevel: string,
+  questions: array,
+  answers: array,
+  feedback: object,
+  score: number,
+  createdAt: timestamp,
+  duration: number
+}
+```
+
+🎯 Roadmap
+
+· Web platform launch
+· AI voice integration with Vapi
+· Firebase authentication
+· Interview feedback system
+· React Native mobile app (Q3 2026)
+· Cross-platform data sync
+· Advanced analytics dashboard
+· Custom interview question generation
+· Video interview support
+· Enterprise features
+
+🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+Development Guidelines
+
+· Follow the existing code style
+· Write meaningful commit messages
+· Add tests for new features
+· Update documentation as needed
+
+🐛 Bug Reports & Feature Requests
+
+Please use the GitHub Issues page to report bugs or suggest features.
+
+📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-# interact_deploy_client
+
+🙏 Acknowledgments
+
+· Vapi AI for voice agent capabilities
+· Firebase for backend services
+· Next.js for the React framework
+· TailwindCSS for styling
+· React Native for mobile development
+
+📞 Contact
+
+· Project Maintainer: Your Name
+· GitHub: @yourusername
+· Twitter: @yourhandle
+· Website: interact-ai.com
+
+---
+
+⭐ Show Your Support
+
+If you found this project helpful, please give it a ⭐ on GitHub!
+
+```
+
+---
+
+**📝 Instructions:**
+1. Copy everything above (from ```markdown to ```)
+2. Replace `yourusername`, `your.email@example.com`, `yourhandle`, and `interact-ai.com` with your actual details
+3. Save as `README.md` in your project root
+4. That's it! Ready to paste anywhere 🚀
